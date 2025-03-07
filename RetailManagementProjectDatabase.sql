@@ -16,30 +16,11 @@ CREATE TABLE Users (
     PostalCode VARCHAR(15),
     RegisteredAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 SELECT * FROM Users;  
 TRUNCATE TABLE Users;
 DROP TABLE Users;
 
-CREATE TABLE ProductList (
-    ProductID INT AUTO_INCREMENT PRIMARY KEY,
-    ProductName VARCHAR(255) NOT NULL,
-    Price DECIMAL(10,2) NOT NULL,
-    Quantity INT NOT NULL,
-    ExpireDate DATE NOT NULL
-);
-
-INSERT INTO ProductList (ProductName, Price, Quantity, ExpireDate) VALUES
-('Sprite', 40.00, 100, '2025-12-31'),
-('Toor Dal', 65.00, 200, '2024-11-30'),
-('Tata Salt', 40.00, 100, '2025-12-31'),
-('Lux International Soap', 75.00, 200, '2024-11-30'),
-('CloseUp Toothpaste', 30.00, 100, '2025-12-31'),
-(' Oil', 156.00, 200, '2024-11-30'),
-('Ice Cream', 50.00, 100, '2025-12-31'),
-('Milk 1Liter', 85.00, 200, '2024-11-30');
-
-SELECT * FROM ProductList;
+-- Dashboard display products--
 
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -47,7 +28,6 @@ CREATE TABLE products (
     price DECIMAL(10, 2) NOT NULL,
     image_url VARCHAR(255) NOT NULL
 );
-
 INSERT INTO products (name, price, image_url) VALUES
 ('Sprite', 40.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7_drU9l6a4VnbCrch0lfuvDq3tfWnAMPVaw&s'),
 ('Toor Dal', 65.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTte0xIh8Am6X_no0zVykL2SzOYJHxBfYresA&s'),
@@ -59,6 +39,26 @@ INSERT INTO products (name, price, image_url) VALUES
 ('Tata Salt', 38.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5bxlCMF4aB0VT9YDqAvtCuyAzDgvY0meClA&s');
 
 SELECT * FROM products;
+
+
+CREATE TABLE ProductList (
+    ProductID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(255) NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    Quantity INT NOT NULL,
+    ExpireDate DATE NOT NULL
+);
+INSERT INTO ProductList (ProductName, Price, Quantity, ExpireDate) VALUES
+('Sprite', 40.00, 100, '2025-12-31'),
+('Toor Dal', 65.00, 200, '2024-11-30'),
+('Tata Salt', 40.00, 100, '2025-12-31'),
+('Lux International Soap', 75.00, 200, '2024-11-30'),
+('CloseUp Toothpaste', 30.00, 100, '2025-12-31'),
+(' Oil', 156.00, 200, '2024-11-30'),
+('Ice Cream', 50.00, 100, '2025-12-31'),
+('Milk 1Liter', 85.00, 200, '2024-11-30');
+
+SELECT * FROM ProductList;
 
 CREATE TABLE cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
